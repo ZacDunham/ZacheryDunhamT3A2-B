@@ -1,0 +1,14 @@
+# Ignore Node.js dependencies
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Ignore Environment Files
+.env
+
+# Ignore Build & Logs
+dist/
+.vite/
+.vscode/
+.DS_Store
+logs/
