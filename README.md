@@ -20,4 +20,4 @@ Cafe Connect is a full-stack web app for ordering café items and earning loyalt
 1. Clone the repo:
    ```sh
    git clone <https://github.com/ZacDunham/ZacheryDunhamT3A2-B>
-   cd cafe-connect
+   cd cafe-connect 2
