@@ -4,10 +4,9 @@ const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 const User = require("../models/User");
 
-const router = express.Router();
 
 // Register User
-router.post("/register", [
+(express.Router()).post("/register", [
   check("name", "Name is required").not().isEmpty(),
   check("email", "Please include a valid email").isEmail(),
   check("password", "Password must be 6+ characters").isLength({ min: 6 })
@@ -33,7 +32,7 @@ router.post("/register", [
 });
 
 // Login User
-router.post("/login", [
+(express.Router()).post("/login", [
   check("email", "Please include a valid email").isEmail(),
   check("password", "Password is required").exists()
 ], async (req, res) => {
@@ -56,4 +55,14 @@ router.post("/login", [
   }
 });
 
-module.exports = router;
+module.exports = express.Router();
+
+const express = require("express");
+const router = express.Router();
+const { getItems, createItem, getItemById } = require("../controller/itemController");
+
+(express.Router()).get("/", getItems);
+(express.Router()).get("/:id", getItemById);
+(express.Router()).post("/", createItem);
+
+module.exports = express.Router();
